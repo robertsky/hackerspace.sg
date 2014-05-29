@@ -9,23 +9,24 @@
 
 	"bundles": {
 		"/js/all.js": [
+			"/js/vendor/bootstrap.js",
 			"/js/vendor/prism.js",		
 			"/js/plugins.js",
 			"/js/main.js"
 		],
 		"/css/main.css": [
-			"/css/less/main.less"	
+			"/css/sass/main.scss"	
 		]
 	},
 
 	"generator": {
-		"skip_paths": ["/css/less/*"]
+		"skip_paths": ["/css/less/*","/css/sass/*"]
 	},
 
 	"blog": {
 		"posts_dir": "posts",
 		"post_format": "markdown",	
-		"post_url": "/{tag}/{year}/{month}/{date}/{title}",
+		"post_url": "/{year}/{month}/{date}/{title}",
 		"teaser_length": 2,
 		"homepage_posts": 10,
 
@@ -34,13 +35,13 @@
 			"year": "/{year}",
 			"year_month": "/{year}/{month}",
 			"year_month_date": "/{year}/{month}/{date}",
-			"tag": "/tag/{tag}"
+			"tag": "/{tag}"
 		}
 	},
 
 	"thirdparty_snippets": {
 		"google_analytics": {
-			"property_id": "UA-xxxxxx-x"
+			"property_id": "UA-11667249-1"
 		},
 
 		"web_fonts": {
@@ -50,26 +51,16 @@
 		},
 
 		"disqus": {
-			"shortname": "my-name"	
+			"shortname": "hackerspacesg"	
 		},
 
 		"tweet_button": {
-			"via": "myname"
+			"via": "hackerspacesg"
 		}
 	},
 
 	"sitemap_generator": {
-		"url_root": "http://www.myblog.com"	
-	},
-
-	"publish" : {
-		"strategy" : "s3", 
-		"options" : {
-			"bucket" : "www.myblog.com",
-			"key" : "key",
-			"secret" : "secret",
-			"x-amz-acl": "public-read"
-		}
+		"url_root": "http://www.hackerspace.sg"	
 	},
 
 	"plugins": {
@@ -86,6 +77,10 @@
 
 		"generator_hooks": {
 			"sitemap_generator_hook": "punch-sitemap-generator"
+		},
+
+		"compiler": {
+			".css": "punch-sass-compiler"
 		}
 
 	}

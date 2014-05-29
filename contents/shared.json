@@ -1,6 +1,38 @@
 {
-	"site-title": "My Blog",
-	"tagline": "Collection of my thoughts, ideas and rants",
-	"host": "www.myblog.com",
-	"creator": "Your Name"
+	"site-title": "Hackerspace Singapore",
+	"tagline": "Singapore's first kaisu-free zone",
+	"host": "www.hackerspace.sg",
+	"navbar": [
+		{ "label": "Home",			"href": "/" },
+		{ 
+			"label": "About", 
+		  	"href": "/about",
+		  	"sub": [
+		  		{ "label": "Connect",		"href": "/connect" },
+		  		{ "label": "Plenum",		"href": "/plenum" },
+		  		{ "label": "Ninjas",		"href": "/ninjas" },
+		  		{ "label": "FAQ",			"href": "/faq" },
+		  		{ "label": "Press",			"href": "/press" },
+		  		{ "label": "Readme",		"href": "/readme" },
+		  	]
+		},
+		{ 
+			"label": "Events", 
+			"href": "/events",
+			"sub": [
+				{ "label": "Past",		"href": "/past" }
+			]
+		},
+		{ "label": "Location",		"href": "/location" },
+		{ "label": "Contribute",	"href": "/contribute" },
+		{ 
+			"label": "Projects",
+			"href": "/projects",
+			"sub": [
+				{ "label": "Completed",		"href": "/completed" },
+				{ "label": "In Progess",	"href": "/ongoing" }
+			]
+		},
+		{ "label": "Ties",			"href": "/ties" }
+	]
 }

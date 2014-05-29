@@ -1,11 +1,36 @@
-{ "name" : "punch-blog",
-	"version" : "1.0.0",
+{ "name" : "hackerspacesg",
+	"version" : "0.0.2",
+	"author": "HackerspaceSG",
+	"description": "hackerspace website",
+	"contributors": [
+	"Chinmay Pendharkar <notthetup@gmail.com>"
+	],
+	"keywords": [
+	"website",
+	"hackerspace",
+	"singapore"
+	],
+	"main": ".",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/hackerspacesg/hackerspace.sg"
+	},
 	"dependencies" : {
 	 	"punch": ">= 0.5.35",
 	 	"punch-blog-content-handler": ">= 0.0.9",
 	 	"punch-current-page-helper": ">= 0.0.1",
 	 	"punch-thirdparty-snippets-helper": ">= 0.0.1",
 		"punch-sitemap-generator": ">= 0.0.5",
-		"underscore": ">= 1.4.2"
- 	} 
+		"underscore": ">= 1.4.2",
+		"punch-sass-compiler": ">=0.0.3",
+		"ical": "~0.2.0"
+ 	},
+	"license": "MIT",
+	"scripts": {
+		"test": "make",
+		"start": "punch server"
+	},
+	"engines": {
+		"node": ">=0.10"
+	}
 }
