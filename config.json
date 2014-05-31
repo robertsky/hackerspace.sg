@@ -20,7 +20,7 @@
 	},
 
 	"generator": {
-		"skip_paths": ["/css/less/*","/css/sass/*"]
+		"skip_paths": ["/css/sass/*"]
 	},
 
 	"blog": {

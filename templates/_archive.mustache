@@ -12,11 +12,12 @@
 		<h3>By Tag</h3>
 		<ul class="filters">
 			{{#top_tags}}
-				<li><a href="/tag/{{#downcase}}{{.}}{{/downcase}}"  class="{{#current}}/tag/{{#downcase}}{{.}}{{/downcase}}{{/current}}">{{.}}</a></li>
+				<li><a href="/{{#downcase}}{{.}}{{/downcase}}"  class="{{#current}}/{{#downcase}}{{.}}{{/downcase}}{{/current}}">{{.}}</a></li>
 			{{/top_tags}}
 		</ul>
 
 		<div class="posts" role="archive">
+			<h4>{{#downcase}}{{.}}{{/downcase}}</h4>
 			<ul>
 				{{#posts}}
 				<li>
