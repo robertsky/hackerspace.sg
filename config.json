@@ -13,14 +13,11 @@
 			"/js/vendor/prism.js",		
 			"/js/plugins.js",
 			"/js/main.js"
-		],
-		"/css/main.css": [
-			"/css/sass/main.scss"	
 		]
 	},
 
 	"generator": {
-		"skip_paths": ["/css/sass/*"]
+		"skip_paths": ["/css/bootstrap/*", "/css/*.scss"]
 	},
 
 	"blog": {
@@ -77,10 +74,6 @@
 
 		"generator_hooks": {
 			"sitemap_generator_hook": "punch-sitemap-generator"
-		},
-
-		"compiler": {
-			".css": "punch-sass-compiler"
 		}
 
 	}

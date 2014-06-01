@@ -2,6 +2,7 @@
 	"site-title": "Hackerspace Singapore",
 	"tagline": "Singapore's first kaisu-free zone",
 	"host": "www.hackerspace.sg",
+	"creator": "HackerspaceSG",
 	"navbar": [
 		{ "label": "Home",			"href": "/" },
 		{ 
