@@ -6,9 +6,14 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>{{{site-title}}}</title>
+	{{#page-title}}
+		<title>{{{ page-title }}} | {{{ site-title }}}</title>
+	{{/page-title}}
+	{{^page-title}}
+		<title>{{{ site-title }}}</title>
+	{{/page-title}}
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	{{#stylesheet_bundle}}<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css">{{/stylesheet_bundle}}
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css">
 	{{{web_font_loader_snippet}}}
 	{{{google_analytics_snippet}}}
 </head>
@@ -30,7 +35,23 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav">
-					
+					{{#navbar}}
+						{{#subBool}}
+							<li class="dropdown">
+								<a href="{{{href}}}" class="dropdown-toggle" data-toggle="dropdown">{{{label}}}<b class="caret"></b></a>
+								<ul class="dropdown-menu">
+						{{/subBool}}
+						{{#sub}}
+									<li><a href="{{{href}}}{{{shref}}}">{{{slabel}}}</a></li>
+						{{/sub}}
+						{{#subBool}}
+								</ul>
+							</li>
+						{{/subBool}}
+						{{^subBool}}
+							<li><a href="{{{href}}}">{{{label}}}</a></li>
+						{{/subBool}}
+					{{/navbar}}
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->

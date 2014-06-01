@@ -8,20 +8,22 @@
 		{ 
 			"label": "About", 
 		  	"href": "/about",
+		  	"subBool": true,
 		  	"sub": [
-		  		{ "label": "Connect",		"href": "/connect" },
-		  		{ "label": "Plenum",		"href": "/plenum" },
-		  		{ "label": "Ninjas",		"href": "/ninjas" },
-		  		{ "label": "FAQ",			"href": "/faq" },
-		  		{ "label": "Press",			"href": "/press" },
-		  		{ "label": "Readme",		"href": "/readme" },
+		  		{ "slabel": "Connect",		"shref": "/connect" },
+		  		{ "slabel": "Plenum",		"shref": "/plenum" },
+		  		{ "slabel": "Ninjas",		"shref": "/ninjas" },
+		  		{ "slabel": "FAQ",			"shref": "/faq" },
+		  		{ "slabel": "Press",		"shref": "/press" },
+		  		{ "slabel": "Readme",		"shref": "/readme" }
 		  	]
 		},
 		{ 
 			"label": "Events", 
 			"href": "/events",
+			"subBool": true,
 			"sub": [
-				{ "label": "Past",		"href": "/past" }
+				{ "slabel": "Past",		"shref": "/past" }
 			]
 		},
 		{ "label": "Location",		"href": "/location" },
@@ -29,9 +31,10 @@
 		{ 
 			"label": "Projects",
 			"href": "/projects",
+			"subBool": true,
 			"sub": [
-				{ "label": "Completed",		"href": "/completed" },
-				{ "label": "In Progess",	"href": "/ongoing" }
+				{ "slabel": "Completed",	"shref": "/completed" },
+				{ "slabel": "In Progess",	"shref": "/ongoing" }
 			]
 		},
 		{ "label": "Ties",			"href": "/ties" }
