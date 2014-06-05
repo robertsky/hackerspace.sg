@@ -18,7 +18,7 @@ var fetch_content = function(callback) {
 
 	blog_content_handler.getPosts('', function(err, posts_obj, posts_last_modified) {
 		if (!err) {
-      var all_posts = posts_obj.posts;
+			var all_posts = posts_obj.posts;
 
 			last_modified = posts_last_modified;
 
@@ -27,17 +27,25 @@ var fetch_content = function(callback) {
 			var fetch_full_posts = function() {
 				if (recent_posts_list.length) {
 					blog_content_handler.getPost(path.join(recent_posts_list.shift().permalink, "index"), function(err, post_contents, modified_date) {
-						var post_paras = post_contents.content.replace(/\n/g, " ").match(/(<p[^>]*>.*?<\/p>)/g);
 
-						if (teaser_length < 1) {
-							paras_to_show = post_paras.length;
+						if ("description" in post_contents) {
+							post_contents.content = post_contents.description;
+							post_contents.is_teaser = true;
+
 						} else {
-							paras_to_show = teaser_length;
+							var post_paras = post_contents.content.replace(/\n/g, " ").match(/(<p[^>]*>.*?<\/p>)/g);
+						
+							if (teaser_length < 1) {
+								paras_to_show = post_paras.length;
+							} else {
+								paras_to_show = teaser_length;
+							}
+
+							post_contents.is_teaser = (paras_to_show < post_paras.length);
+							post_contents.content = post_paras.slice(0, paras_to_show).join("");
+
 						}
-
-						post_contents.is_teaser = (paras_to_show < post_paras.length);
-						post_contents.content = post_paras.slice(0, paras_to_show).join("");
-
+						console.log(post_contents);
 						if (!err) {
 							recent_posts.push(post_contents);
 						}

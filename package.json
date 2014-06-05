@@ -17,7 +17,7 @@
 	},
 	"dependencies" : {
 	 	"punch": ">= 0.5.35",
-	 	"punch-blog-content-handler": ">= 0.0.9",
+	 	"punch-blog-content-handler": "git+https://github.com/robertsky/punch-blog-content-handler.git#master",
 	 	"punch-current-page-helper": ">= 0.0.1",
 	 	"punch-thirdparty-snippets-helper": ">= 0.0.1",
 		"punch-sitemap-generator": ">= 0.0.5",
