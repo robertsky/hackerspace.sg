@@ -9,7 +9,6 @@
 
 	"bundles": {
 		"/js/all.js": [
-			"/js/vendor/bootstrap.js",
 			"/js/vendor/prism.js",		
 			"/js/plugins.js",
 			"/js/main.js"
