@@ -14,14 +14,17 @@
 	{{/page-title}}
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css">
+	<script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBl2UrnWYGDMk3UqOCSAXXQ-js-ZfnGO18">
+    </script>
 	{{{web_font_loader_snippet}}}
 	{{{google_analytics_snippet}}}
 </head>
 
 <body data-target=".navbar-fixed-top">
 
-	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-		<div class="container">
+	<nav class="navbar navbar-default navbar-fixed-top hidden" role="navigation" id="fixed-top-nav">
+		<div class="container-fluid">
 			<div class="navbar-header page-scroll">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 					<span class="sr-only">Toggle navigation</span>
@@ -29,7 +32,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#page-top">HackerspaceSG</a>
+				<a class="navbar-brand" href="/">HackerspaceSG</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -58,3 +61,65 @@
 		</div>
 		<!-- /.container -->
 	</nav>
+
+	<div class="container-fluid" id="header-content">
+		<img src="/img/banner.png" id="header-banner" data-toggle="modal" data-target="#drop-in" />
+		<nav class="navbar navbar-default" role="navigation" id="moving-nav">
+			<div class="container-fluid">
+				<div class="navbar-header page-scroll">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse navbar-ex1-collapse">
+					<ul class="nav navbar-nav">
+						{{#navbar}}
+							{{#subBool}}
+								<li class="dropdown">
+									<a href="{{{href}}}" class="dropdown-toggle" data-toggle="dropdown">{{{label}}}<b class="caret"></b></a>
+									<ul class="dropdown-menu">
+							{{/subBool}}
+							{{#sub}}
+										<li><a href="{{{href}}}{{{shref}}}">{{{slabel}}}</a></li>
+							{{/sub}}
+							{{#subBool}}
+									</ul>
+								</li>
+							{{/subBool}}
+							{{^subBool}}
+								<li><a href="{{{href}}}">{{{label}}}</a></li>
+							{{/subBool}}
+						{{/navbar}}
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container -->
+		</nav>
+	</div>
+
+
+
+
+	<div class="modal fade" id="drop-in" tab-index="-1" role="dialog" aria-labelledby="drop-in-label" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">Drop In</h4>
+				</div>
+				<div class="modal-body">
+					We are located at King George's Building.
+					<div id="map-canvas"></div>
+					Our address is:
+					<h3>344B King George’s Avenue, Singapore 208576</h3>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
